@@ -58,3 +58,26 @@ local layout = Instance.new("UIListLayout", scroll)
 layout.Padding = UDim.new(0, 5)
 layout.SortOrder = Enum.SortOrder.LayoutOrder
 
+-- Tabla de botones
+local playerButtons = {}
+
+-- Crear botón para jugador
+local function createPlayerButton(player)
+    if player == LocalPlayer then return end
+    if playerButtons[player] then return end
+
+    local card = Instance.new("Frame")
+    card.Size = UDim2.new(1, 0, 0, 40)
+    card.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+    card.Parent = scroll
+    Instance.new("UICorner", card).CornerRadius = UDim.new(0.1, 0)
+
+    local nameLabel = Instance.new("TextLabel", card)
+    nameLabel.Size = UDim2.new(0.7, 0, 1, 0)
+    nameLabel.Position = UDim2.new(0, 10, 0, 0)
+    nameLabel.Text = player.Name
+    nameLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+    nameLabel.BackgroundTransparency = 1
+    nameLabel.Font = Enum.Font.SourceSansBold
+    nameLabel.TextScaled = true
+    nameLabel.TextXAlignment = Enum.TextXAlignment.Left
