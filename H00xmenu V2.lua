@@ -18,3 +18,12 @@ Instance.new("UICorner", bubble).CornerRadius = UDim.new(1, 0)
 TweenService:Create(bubble, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), {
     BackgroundColor3 = Color3.fromRGB(0, 50, 0)
 }):Play()
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 40)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Text = "TELEPORT TO PLAYER"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1
+title.Font = Enum.Font.SourceSansBold
+title.TextScaled = true
