@@ -81,3 +81,19 @@ local function createPlayerButton(player)
     nameLabel.Font = Enum.Font.SourceSansBold
     nameLabel.TextScaled = true
     nameLabel.TextXAlignment = Enum.TextXAlignment.Left
+    
+    local tpButton = Instance.new("TextButton", card)
+    tpButton.Size = UDim2.new(0.2, 0, 0.8, 0)
+    tpButton.Position = UDim2.new(0.75, 0, 0.1, 0)
+    tpButton.Text = "TP"
+    tpButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    tpButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    tpButton.Font = Enum.Font.SourceSansBold
+    tpButton.TextScaled = true
+
+    tpButton.MouseButton1Click:Connect(function()
+        local target = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+        if target then
+            LocalPlayer.Character:MoveTo(target.Position)
+        end
+    end)
