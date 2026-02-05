@@ -47,7 +47,7 @@ closeBtn.TextScaled = true
 
 -- Scroll
 local scroll = Instance.new("ScrollingFrame", frame)
-scroll.Size = UDim2.new(1, -20, 1, -50)
+scroll.Size = UDim2.new(10, 100, 10, 100)
 scroll.Position = UDim2.new(0, 10, 0, 50)
 scroll.BackgroundTransparency = 1
 scroll.ScrollBarThickness = 6
